@@ -3,80 +3,308 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Padel Finder Russia — Падел площадки и клубам</title>
+  <title>Padel Finder Russia — Падел площадки и клубы</title>
   <meta name="description" content="Простая посадочная для Padel Finder Russia: для игроков — ссылка в приложение; для клубов — заявка на подключение." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root { --bg: #0b0f19; --card:#121829; --muted:#8ea0b6; --acc:#7ce2ff; --acc2:#66ffa6; }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial; background:var(--bg); color:#e9eef6}
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:1120px; margin:0 auto; padding:24px}
-    header{display:flex; align-items:center; justify-content:space-between; gap:16px}
-    .logo{display:flex; align-items:center; gap:12px; font-weight:700}
-    .logo-dot{width:12px;height:12px;background:var(--acc);border-radius:50%}
-    .nav{display:flex; gap:16px}
-    .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 16px; border-radius:16px; background:linear-gradient(135deg,var(--acc),var(--acc2)); color:#03121a; font-weight:700; border:none; cursor:pointer}
-    .btn.ghost{background:transparent;border:1px solid #2a3958;color:#cfe3ff}
-    .btn.small{padding:10px 12px; border-radius:12px; font-weight:600}
-    .hero{padding:64px 0 40px; display:grid; grid-template-columns:1.1fr 0.9fr; gap:32px}
-    .hero h1{font-size:40px; line-height:1.05; margin:0 0 16px}
-    .hero p{color:var(--muted); margin:0 0 24px}
-    .card{background:var(--card); border:1px solid #1f2a44; border-radius:24px; padding:24px}
-    .two-col{display:grid; grid-template-columns:1fr 1fr; gap:24px}
-    .kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:18px}
-    .kpi{background:#0f1629; border:1px solid #1f2a44; border-radius:16px; padding:14px}
-    .kpi .v{font-size:20px; font-weight:700}
-    .section{padding:40px 0}
-    .list{display:grid; gap:10px; margin:0; padding:0 0 0 18px}
-    .list li{margin-left:6px; color:#cdd8ea}
-    .cta{display:flex; gap:12px; flex-wrap:wrap}
-    footer{padding:32px 0; color:#8aa0b6}
-    .badge{font-size:12px; padding:6px 10px; border-radius:999px; background:#0f1629; border:1px solid #203155; color:#b7c7dd; display:inline-block}
-    .lang{display:flex; gap:8px}
-    .hidden{display:none !important}
-    @media (max-width:960px){ .hero{grid-template-columns:1fr} .two-col{grid-template-columns:1fr} }
+    :root { 
+      --bg: #0b0f19; 
+      --card: #121829; 
+      --muted: #8ea0b6; 
+      --acc: #7ce2ff; 
+      --acc2: #66ffa6; 
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg);
+      color: #e9eef6;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    .logo-dot {
+      width: 12px;
+      height: 12px;
+      background: var(--acc);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .nav {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--acc), var(--acc2));
+      color: #03121a;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      font-size: 15px;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(124, 226, 255, 0.3);
+    }
+    .btn.ghost {
+      background: transparent;
+      border: 1px solid #2a3958;
+      color: #cfe3ff;
+    }
+    .btn.ghost:hover {
+      border-color: var(--acc);
+      box-shadow: 0 4px 12px rgba(124, 226, 255, 0.2);
+    }
+    .btn.small {
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    
+    .hero {
+      padding: 64px 0 40px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 32px;
+      align-items: start;
+    }
+    .hero h1 {
+      font-size: 48px;
+      line-height: 1.1;
+      margin: 0 0 16px;
+      background: linear-gradient(135deg, #ffffff, #cfe3ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      color: var(--muted);
+      margin: 0 0 24px;
+      font-size: 18px;
+    }
+    
+    .card {
+      background: var(--card);
+      border: 1px solid #1f2a44;
+      border-radius: 24px;
+      padding: 28px;
+      transition: border-color 0.3s;
+    }
+    .card:hover {
+      border-color: #2a3958;
+    }
+    
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    
+    .section {
+      padding: 40px 0;
+    }
+    
+    .list {
+      display: grid;
+      gap: 12px;
+      margin: 16px 0;
+      padding: 0 0 0 20px;
+    }
+    .list li {
+      color: #cdd8ea;
+      line-height: 1.5;
+    }
+    
+    .cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    
+    .badge {
+      font-size: 12px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #0f1629;
+      border: 1px solid #203155;
+      color: #b7c7dd;
+      display: inline-block;
+      transition: all 0.2s;
+    }
+    .badge:hover {
+      border-color: var(--acc);
+      color: #cfe3ff;
+    }
+    
+    .lang {
+      display: flex;
+      gap: 8px;
+    }
+    
+    .app-badges {
+      margin-top: 20px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .app-badges img {
+      height: 48px;
+      transition: transform 0.2s;
+    }
+    .app-badges img:hover {
+      transform: scale(1.05);
+    }
+    
+    details {
+      margin: 16px 0;
+      padding: 16px;
+      background: #0f1629;
+      border: 1px solid #1f2a44;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    details summary {
+      font-weight: 600;
+      color: #e9eef6;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+    details summary::before {
+      content: '▶';
+      font-size: 12px;
+      color: var(--acc);
+      transition: transform 0.2s;
+    }
+    details[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details p {
+      margin: 12px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+    
+    footer {
+      padding: 32px 0;
+      color: #8aa0b6;
+      border-top: 1px solid #1f2a44;
+      margin-top: 40px;
+    }
+    
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 36px;
+      }
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+      header {
+        justify-content: center;
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .wrap {
+        padding: 16px;
+      }
+      .hero {
+        padding: 40px 0 32px;
+      }
+      .hero h1 {
+        font-size: 28px;
+      }
+      .hero p {
+        font-size: 16px;
+      }
+      .nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+      }
+      .card {
+        padding: 20px;
+      }
+    }
   </style>
-  html { scroll-behavior: smooth; }
 </head>
 <body>
   <div class="wrap">
     <header>
-      <div class="logo"><span class="logo-dot"></span> Padel Finder Russia</div>
+      <div class="logo">
+        <span class="logo-dot"></span>
+        Padel Finder Russia
+      </div>
+      <div class="lang">
+        <button class="btn small ghost" data-lang="ru">RU</button>
+        <button class="btn small ghost" data-lang="en">EN</button>
+      </div>
       <nav class="nav">
         <a href="#players" class="badge" data-i="nav.players">Для игроков</a>
         <a href="#clubs" class="badge" data-i="nav.clubs">Для клубов</a>
         <a href="#faq" class="badge">FAQ</a>
       </nav>
-      <div class="lang">
-        <button class="btn small ghost" data-lang="ru">RU</button>
-        <button class="btn small ghost" data-lang="en">EN</button>
-      </div>
     </header>
 
     <section class="hero">
       <div>
         <h1 data-i="hero.h1">Бронируйте падел в один клик. Подключайте клуб — без сложностей.</h1>
         <p data-i="hero.p">Для игроков — быстрый переход в приложение. Для клубов — заявка на подключение и старт за 24 часа.</p>
-       <div class="cta">
-  <a id="playersLink" class="btn" href="#download" data-i="cta.players">Перейти в приложение</a>
-  <a id="clubsLink" class="btn ghost" href="#clubs" data-i="cta.clubs">Подключить клуб</a>
-</div>
-<!-- App Store + Google Play badges -->
-<div id="download" style="margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap;">
-  <a href="https://play.google.com/store/apps/https://play.google.com/store/apps/details?id=com.thefinderapp.padelfinder&hl=en_US target="_blank" rel="noopener">
-    <img src="assets/google-play-badge.png" alt="Get it on Google Play" height="55">
-  </a>
-  <a href="https://apps.apple.com/app/padelfinder/https://apps.apple.com/ru/app/padel-finder/id1579684009?l=en-GB target="_blank" rel="noopener">
-    <img src="assets/app-store-badge.svg" alt="Download on the App Store" height="55">
-  </a>
-</div>
+        <div class="cta">
+          <a class="btn" href="#download" data-i="cta.players">Перейти в приложение</a>
+          <a class="btn ghost" href="#clubs" data-i="cta.clubs">Подключить клуб</a>
+        </div>
+        
+        <div id="download" class="app-badges">
+          <a href="https://play.google.com/store/apps/details?id=com.thefinderapp.padelfinder&hl=en_US" target="_blank" rel="noopener">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+          </a>
+          <a href="https://apps.apple.com/ru/app/padel-finder/id1579684009?l=en-GB" target="_blank" rel="noopener">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store">
+          </a>
+        </div>
+      </div>
 
       <div class="card">
         <div class="badge" data-i="badge">Демо</div>
-        <h3 style="margin:12px 0 8px" data-i="demo.h3">Как это работает</h3>
+        <h3 style="margin:16px 0 8px" data-i="demo.h3">Как это работает</h3>
         <ol class="list">
           <li data-i="demo.1">Игрок нажимает «Перейти в приложение» и бронирует корт.</li>
           <li data-i="demo.2">Клуб отправляет заявку — мы подключаем расписание и оплату.</li>
@@ -100,8 +328,7 @@
           <li data-i="clubs.l3">Маркетинг игрокам и турнирам</li>
         </ul>
         <div class="cta">
-          <!-- Option A: link to external form; Option B: mailto -->
-          <a class="btn" href="CLUB_CONTACT_URL" target="_blank" rel="noopener" data-i="clubs.btn">Отправить заявку</a>
+          <a class="btn" href="https://forms.gle/YOURFORMID" target="_blank" rel="noopener" data-i="clubs.btn">Отправить заявку</a>
           <a class="btn ghost" href="mailto:info@padelfinder.ru" data-i="clubs.mail">Написать на почту</a>
         </div>
       </div>
@@ -116,7 +343,7 @@
         </details>
         <details>
           <summary data-i="q2">Как клуб получает деньги?</summary>
-          <p data-i="a2">Мы проводим оплату игрока и автоматически перечисляем клубу</p>
+          <p data-i="a2">Мы проводим оплату игрока и автоматически перечисляем средства клубу.</p>
         </details>
         <details>
           <summary data-i="q3">Сколько времени занимает подключение клуба?</summary>
@@ -128,7 +355,10 @@
     <footer>
       <div class="two-col">
         <div>
-          <div class="logo"><span class="logo-dot"></span> Padel Finder Russia</div>
+          <div class="logo">
+            <span class="logo-dot"></span>
+            Padel Finder Russia
+          </div>
           <div style="margin-top:8px">© <span id="year"></span> Padel Finder Russia</div>
         </div>
         <div style="text-align:right">
@@ -144,99 +374,111 @@
     // Simple i18n RU/EN
     const dict = {
       ru: {
-        'nav.players':'Для игроков','nav.clubs':'Для клубов',
-      'hero.h1':'Бронируйте падел в один клик. Подключайте клуб — без сложностей.',
-      'hero.p':'Для игроков — быстрый переход в приложение. Для клубов — заявка на подключение и старт за 24 часа.',
-      'cta.players':'Перейти в приложение','cta.clubs':'Подключить клуб',
-
-      'badge':'Демо','demo.h3':'Как это работает',
-      'demo.1':'Игрок нажимает «Перейти в приложение» и бронирует корт.',
-      'demo.2':'Клуб отправляет заявку — мы подключаем расписание и оплату.',
-      'demo.3':'Выплаты клубу происходят автоматически.',
-
-      'players.h2':'Для игроков',
-      'players.p':'Найдите ближайшие корты, открытые игры и турниры. Моментальная бронь, уведомления о матчах.',
-      'players.btn':'Открыть приложение',
-
-      'clubs.h2':'Для клубов',
-      'clubs.p':'Подключим ваш клуб к системе бронирования.',
-      'clubs.l1':'Онлайн-расписание и оплата',
-      'clubs.l2':'Безопасные выплаты',
-      'clubs.l3':'Маркетинг игрокам и турнирам',
-      'clubs.btn':'Отправить заявку',
-      'clubs.mail':'Написать на почту',
-
-      'q1':'Нужна ли регистрация, чтобы играть?',
-      'a1':'Нет. Просто перейдите в приложение по кнопке — авторизация займет меньше минуты.',
-      'q2':'Как клуб получает деньги?',
-      'a2':'Мы проводим оплату игрока и автоматически перечисляем средства клубу.',
-      'q3':'Сколько времени занимает подключение клуба?',
-      'a3':'Обычно до 24 часов после верификации документов и загрузки расписания.',
-
-      'legal.offer':'Публичная оферта',
-      'legal.privacy':'Политика конфиденциальности',
-      'legal.cookies':'Политика возврата'
+        'nav.players': 'Для игроков',
+        'nav.clubs': 'Для клубов',
+        'hero.h1': 'Бронируйте падел в один клик. Подключайте клуб — без сложностей.',
+        'hero.p': 'Для игроков — быстрый переход в приложение. Для клубов — заявка на подключение и старт за 24 часа.',
+        'cta.players': 'Перейти в приложение',
+        'cta.clubs': 'Подключить клуб',
+        'badge': 'Демо',
+        'demo.h3': 'Как это работает',
+        'demo.1': 'Игрок нажимает «Перейти в приложение» и бронирует корт.',
+        'demo.2': 'Клуб отправляет заявку — мы подключаем расписание и оплату.',
+        'demo.3': 'Выплаты клубу происходят автоматически.',
+        'players.h2': 'Для игроков',
+        'players.p': 'Найдите ближайшие корты, открытые игры и турниры. Моментальная бронь, уведомления о матчах.',
+        'players.btn': 'Открыть приложение',
+        'clubs.h2': 'Для клубов',
+        'clubs.p': 'Подключим ваш клуб к системе бронирования.',
+        'clubs.l1': 'Онлайн-расписание и оплата',
+        'clubs.l2': 'Безопасные выплаты',
+        'clubs.l3': 'Маркетинг игрокам и турнирам',
+        'clubs.btn': 'Отправить заявку',
+        'clubs.mail': 'Написать на почту',
+        'q1': 'Нужна ли регистрация, чтобы играть?',
+        'a1': 'Нет. Просто перейдите в приложение по кнопке — авторизация займет меньше минуты.',
+        'q2': 'Как клуб получает деньги?',
+        'a2': 'Мы проводим оплату игрока и автоматически перечисляем средства клубу.',
+        'q3': 'Сколько времени занимает подключение клуба?',
+        'a3': 'Обычно до 24 часов после верификации документов и загрузки расписания.',
+        'legal.offer': 'Публичная оферта',
+        'legal.privacy': 'Политика конфиденциальности',
+        'legal.cookies': 'Политика возврата'
       },
       en: {
-        'nav.players':'For Players','nav.clubs':'For Clubs',
-      'hero.h1':'Book padel in one click. Onboard your club, no hassle.',
-      'hero.p':'Players go straight to the app. Clubs send a short form and go live within 24h.',
-      'cta.players':'Open the App','cta.clubs':'Onboard a Club',
-
-      'badge':'Demo','demo.h3':'How it works',
-      'demo.1':'Player taps “Open the App” and books a court.',
-      'demo.2':'Club submits a request — we connect schedule and payments.',
-      'demo.3':'Club payouts happen automatically.',
-
-      'players.h2':'For Players',
-      'players.p':'Find nearby courts, open play and tournaments. Instant booking and match alerts.',
-      'players.btn':'Open the App',
-
-      'clubs.h2':'For Clubs',
-      'clubs.p':'We connect your club to online bookings.',
-      'clubs.l1':'Online schedule & payments',
-      'clubs.l2':'Secure payouts',
-      'clubs.l3':'Marketing to players & events',
-      'clubs.btn':'Send Application',
-      'clubs.mail':'Email Support',
-
-      'q1':'Do I need an account to play?',
-      'a1':'No. Tap the button and log in quickly inside the app.',
-      'q2':'How do clubs get paid?',
-      'a2':'We process the player payment and automatically credit the club.',
-      'q3':'How fast is onboarding?',
-      'a3':'Usually within 24 hours after verification and schedule upload.',
-
-      'legal.offer':'Public Offer',
-      'legal.privacy':'Privacy Policy',
-      'legal.cookies':'Refund Policy'
-    }
+        'nav.players': 'For Players',
+        'nav.clubs': 'For Clubs',
+        'hero.h1': 'Book padel in one click. Onboard your club, no hassle.',
+        'hero.p': 'Players go straight to the app. Clubs send a short form and go live within 24h.',
+        'cta.players': 'Open the App',
+        'cta.clubs': 'Onboard a Club',
+        'badge': 'Demo',
+        'demo.h3': 'How it works',
+        'demo.1': 'Player taps "Open the App" and books a court.',
+        'demo.2': 'Club submits a request — we connect schedule and payments.',
+        'demo.3': 'Club payouts happen automatically.',
+        'players.h2': 'For Players',
+        'players.p': 'Find nearby courts, open play and tournaments. Instant booking and match alerts.',
+        'players.btn': 'Open the App',
+        'clubs.h2': 'For Clubs',
+        'clubs.p': 'We connect your club to online bookings.',
+        'clubs.l1': 'Online schedule & payments',
+        'clubs.l2': 'Secure payouts',
+        'clubs.l3': 'Marketing to players & events',
+        'clubs.btn': 'Send Application',
+        'clubs.mail': 'Email Support',
+        'q1': 'Do I need an account to play?',
+        'a1': 'No. Tap the button and log in quickly inside the app.',
+        'q2': 'How do clubs get paid?',
+        'a2': 'We process the player payment and automatically credit the club.',
+        'q3': 'How fast is onboarding?',
+        'a3': 'Usually within 24 hours after verification and schedule upload.',
+        'legal.offer': 'Public Offer',
+        'legal.privacy': 'Privacy Policy',
+        'legal.cookies': 'Refund Policy'
       }
     };
 
     const setLang = (lng) => {
-    document.querySelectorAll('[data-i]').forEach(el => {
-      const key = el.getAttribute('data-i');
-      if (dict[lng] && dict[lng][key]) el.textContent = dict[lng][key];
-    });
-    document.documentElement.lang = lng === 'en' ? 'en' : 'ru';
-  };
-  document.querySelectorAll('[data-lang]').forEach(btn =>
-    btn.addEventListener('click', () => setLang(btn.dataset.lang))
-  );
+      document.querySelectorAll('[data-i]').forEach(el => {
+        const key = el.getAttribute('data-i');
+        if (dict[lng] && dict[lng][key]) {
+          el.textContent = dict[lng][key];
+        }
+      });
+      document.documentElement.lang = lng === 'en' ? 'en' : 'ru';
+      
+      // Update active button state
+      document.querySelectorAll('[data-lang]').forEach(btn => {
+        if (btn.dataset.lang === lng) {
+          btn.style.borderColor = 'var(--acc)';
+          btn.style.color = '#cfe3ff';
+        } else {
+          btn.style.borderColor = '#2a3958';
+          btn.style.color = '#cfe3ff';
+        }
+      });
+    };
 
-  // Current year
-  document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelectorAll('[data-lang]').forEach(btn =>
+      btn.addEventListener('click', () => setLang(btn.dataset.lang))
+    );
 
-  // Optional: allow ?form=<url> to override the “Отправить заявку” link
-  const params = new URLSearchParams(location.search);
-  const form = params.get('form');
-  if (form) {
-    document.querySelectorAll('a[href="CLUB_CONTACT_URL"]').forEach(a => a.href = form);
-  }
+    // Current year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Default language RU on .ru domain, EN otherwise
-  setLang(location.hostname.endsWith('.ru') ? 'ru' : 'en');
-</script>
+    // Optional: allow ?form=<url> to override the club application link
+    const params = new URLSearchParams(location.search);
+    const formUrl = params.get('form');
+    if (formUrl) {
+      document.querySelectorAll('a[href^="https://forms.gle/"]').forEach(a => {
+        a.href = formUrl;
+      });
+    }
+
+    // Default language RU on .ru domain, EN otherwise
+    const defaultLang = location.hostname.endsWith('.ru') ? 'ru' : 'ru';
+    setLang(defaultLang);
+  </script>
 </body>
 </html>
