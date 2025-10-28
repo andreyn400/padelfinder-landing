@@ -60,12 +60,11 @@
         <h1 data-i="hero.h1">Бронируйте падел в один клик. Подключайте клуб — без сложностей.</h1>
         <p data-i="hero.p">Для игроков — быстрый переход в приложение. Для клубов — заявка на подключение и старт за 24 часа.</p>
        <div class="cta">
-  <a id="playersLink" class="btn" href="APP_URL" target="_blank" rel="noopener" data-i="cta.players">Перейти в приложение</a>
+  <a id="playersLink" class="btn" href="#download" data-i="cta.players">Перейти в приложение</a>
   <a id="clubsLink" class="btn ghost" href="#clubs" data-i="cta.clubs">Подключить клуб</a>
 </div>
-
 <!-- App Store + Google Play badges -->
-<div style="margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap;">
+<div id="download" style="margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap;">
   <a href="https://play.google.com/store/apps/details?id=com.padelfinder" target="_blank" rel="noopener">
     <img src="assets/google-play-badge.png" alt="Get it on Google Play" height="55">
   </a>
@@ -80,7 +79,7 @@
         <ol class="list">
           <li data-i="demo.1">Игрок нажимает «Перейти в приложение» и бронирует корт.</li>
           <li data-i="demo.2">Клуб отправляет заявку — мы подключаем расписание и оплату.</li>
-          <li data-i="demo.3">Выплаты клубу — автоматически, комиссия 5%.</li>
+          <li data-i="demo.3">Выплаты клубу происходят автоматически.</li>/li>
         </ol>
       </div>
     </section>
@@ -89,20 +88,20 @@
       <div class="card">
         <h2 data-i="players.h2">Для игроков</h2>
         <p data-i="players.p">Найдите ближайшие корты, открытые игры и турниры. Моментальная бронь, уведомления о матчах.</p>
-        <div class="cta"><a class="btn" href="APP_URL" target="_blank" rel="noopener" data-i="players.btn">Открыть приложение</a></div>
+        <a class="btn" href="#download" data-i="players.btn">Открыть приложение</a>
       </div>
       <div class="card">
         <h2 data-i="clubs.h2">Для клубов</h2>
-        <p data-i="clubs.p">Подключим ваш клуб к системе бронирования. Платежи с разделением: 95% вам, 5% нам.</p>
+        <p data-i="clubs.p">Подключим ваш клуб к системе бронирования</p>
         <ul class="list">
           <li data-i="clubs.l1">Онлайн-расписание и оплата</li>
-          <li data-i="clubs.l2">Безопасные выплаты, акты и отчеты</li>
+          <li data-i="clubs.l2">Безопасные выплаты</li>
           <li data-i="clubs.l3">Маркетинг игрокам и турнирам</li>
         </ul>
         <div class="cta">
           <!-- Option A: link to external form; Option B: mailto -->
           <a class="btn" href="CLUB_CONTACT_URL" target="_blank" rel="noopener" data-i="clubs.btn">Отправить заявку</a>
-          <a class="btn ghost" href="mailto:support@padelfinder.ru" data-i="clubs.mail">Написать на почту</a>
+          <a class="btn ghost" href="mailto:info@padelfinder.ru" data-i="clubs.mail">Написать на почту</a>
         </div>
       </div>
     </section>
@@ -116,7 +115,7 @@
         </details>
         <details>
           <summary data-i="q2">Как клуб получает деньги?</summary>
-          <p data-i="a2">Мы проводим оплату игрока и автоматически перечисляем 95% клубу, удерживая 5% комиссии агрегатора.</p>
+          <p data-i="a2">Мы проводим оплату игрока и автоматически перечисляем клубу</p>
         </details>
         <details>
           <summary data-i="q3">Сколько времени занимает подключение клуба?</summary>
@@ -134,7 +133,7 @@
         <div style="text-align:right">
           <a class="badge" href="#" data-i="legal.offer">Публичная оферта</a>
           <a class="badge" href="#" data-i="legal.privacy">Политика конфиденциальности</a>
-          <a class="badge" href="#" data-i="legal.cookies">Cookies</a>
+          <a class="badge" href="#" data-i="legal.cookies">Политика возврата</a>
         </div>
       </div>
     </footer>
