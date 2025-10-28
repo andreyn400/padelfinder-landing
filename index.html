@@ -39,6 +39,7 @@
     .hidden{display:none !important}
     @media (max-width:960px){ .hero{grid-template-columns:1fr} .two-col{grid-template-columns:1fr} }
   </style>
+  html { scroll-behavior: smooth; }
 </head>
 <body>
   <div class="wrap">
@@ -65,10 +66,10 @@
 </div>
 <!-- App Store + Google Play badges -->
 <div id="download" style="margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap;">
-  <a href="https://play.google.com/store/apps/details?id=com.padelfinder" target="_blank" rel="noopener">
+  <a href="https://play.google.com/store/apps/https://play.google.com/store/apps/details?id=com.thefinderapp.padelfinder&hl=en_US target="_blank" rel="noopener">
     <img src="assets/google-play-badge.png" alt="Get it on Google Play" height="55">
   </a>
-  <a href="https://apps.apple.com/app/padelfinder/id1234567890" target="_blank" rel="noopener">
+  <a href="https://apps.apple.com/app/padelfinder/https://apps.apple.com/ru/app/padel-finder/id1579684009?l=en-GB target="_blank" rel="noopener">
     <img src="assets/app-store-badge.svg" alt="Download on the App Store" height="55">
   </a>
 </div>
@@ -79,7 +80,7 @@
         <ol class="list">
           <li data-i="demo.1">Игрок нажимает «Перейти в приложение» и бронирует корт.</li>
           <li data-i="demo.2">Клуб отправляет заявку — мы подключаем расписание и оплату.</li>
-          <li data-i="demo.3">Выплаты клубу происходят автоматически.</li>/li>
+          <li data-i="demo.3">Выплаты клубу происходят автоматически.</li>
         </ol>
       </div>
     </section>
@@ -144,56 +145,98 @@
     const dict = {
       ru: {
         'nav.players':'Для игроков','nav.clubs':'Для клубов',
-        'hero.h1':'Бронируйте падел в один клик. Подключайте клуб — без сложностей.',
-        'hero.p':'Для игроков — быстрый переход в приложение. Для клубов — заявка на подключение и старт за 24 часа.',
-        'cta.players':'Перейти в приложение','cta.clubs':'Подключить клуб',
-        'kpi1.v':'5%','kpi1.t':'Комиссия агрегатора','kpi2.v':'95%','kpi2.t':'Клубу на выплату','kpi3.v':'24ч','kpi3.t':'Запуск после верификации',
-        'badge':'Демо','demo.h3':'Как это работает','demo.1':'Игрок нажимает «Перейти в приложение» и бронирует корт.','demo.2':'Клуб отправляет заявку — мы подключаем расписание и оплату.','demo.3':'Выплаты клубу — автоматически, комиссия 5%.',
-        'players.h2':'Для игроков','players.p':'Найдите ближайшие корты, открытые игры и турниры. Моментальная бронь, уведомления о матчах.','players.btn':'Открыть приложение',
-        'clubs.h2':'Для клубов','clubs.p':'Подключим ваш клуб к системе бронирования. Платежи с разделением: 95% вам, 5% нам.','clubs.l1':'Онлайн-расписание и оплата','clubs.l2':'Безопасные выплаты, акты и отчеты','clubs.l3':'Маркетинг игрокам и турнирам','clubs.btn':'Отправить заявку','clubs.mail':'Написать на почту',
-        'q1':'Нужна ли регистрация, чтобы играть?','a1':'Нет. Просто перейдите в приложение по кнопке — авторизация займет меньше минуты.',
-        'q2':'Как клуб получает деньги?','a2':'Мы проводим оплату игрока и автоматически перечисляем 95% клубу, удерживая 5% комиссии агрегатора.',
-        'q3':'Сколько времени занимает подключение клуба?','a3':'Обычно до 24 часов после верификации документов и загрузки расписания.',
-        'legal.offer':'Публичная оферта','legal.privacy':'Политика конфиденциальности','legal.cookies':'Cookies'
+      'hero.h1':'Бронируйте падел в один клик. Подключайте клуб — без сложностей.',
+      'hero.p':'Для игроков — быстрый переход в приложение. Для клубов — заявка на подключение и старт за 24 часа.',
+      'cta.players':'Перейти в приложение','cta.clubs':'Подключить клуб',
+
+      'badge':'Демо','demo.h3':'Как это работает',
+      'demo.1':'Игрок нажимает «Перейти в приложение» и бронирует корт.',
+      'demo.2':'Клуб отправляет заявку — мы подключаем расписание и оплату.',
+      'demo.3':'Выплаты клубу происходят автоматически.',
+
+      'players.h2':'Для игроков',
+      'players.p':'Найдите ближайшие корты, открытые игры и турниры. Моментальная бронь, уведомления о матчах.',
+      'players.btn':'Открыть приложение',
+
+      'clubs.h2':'Для клубов',
+      'clubs.p':'Подключим ваш клуб к системе бронирования.',
+      'clubs.l1':'Онлайн-расписание и оплата',
+      'clubs.l2':'Безопасные выплаты',
+      'clubs.l3':'Маркетинг игрокам и турнирам',
+      'clubs.btn':'Отправить заявку',
+      'clubs.mail':'Написать на почту',
+
+      'q1':'Нужна ли регистрация, чтобы играть?',
+      'a1':'Нет. Просто перейдите в приложение по кнопке — авторизация займет меньше минуты.',
+      'q2':'Как клуб получает деньги?',
+      'a2':'Мы проводим оплату игрока и автоматически перечисляем средства клубу.',
+      'q3':'Сколько времени занимает подключение клуба?',
+      'a3':'Обычно до 24 часов после верификации документов и загрузки расписания.',
+
+      'legal.offer':'Публичная оферта',
+      'legal.privacy':'Политика конфиденциальности',
+      'legal.cookies':'Политика возврата'
       },
       en: {
         'nav.players':'For Players','nav.clubs':'For Clubs',
-        'hero.h1':'Book padel in one click. Onboard your club, no hassle.',
-        'hero.p':'Players go straight to the app. Clubs send a short form and go live within 24h.',
-        'cta.players':'Open the App','cta.clubs':'Onboard a Club',
-        'kpi1.v':'5%','kpi1.t':'Aggregator fee','kpi2.v':'95%','kpi2.t':'Paid to club','kpi3.v':'24h','kpi3.t':'Go live after verification',
-        'badge':'Demo','demo.h3':'How it works','demo.1':'Player taps “Open the App” and books a court.','demo.2':'Club submits a form — we connect schedule & payments.','demo.3':'Automatic payouts — 5% fee retained.',
-        'players.h2':'For Players','players.p':'Find nearby courts, open play and tournaments. Instant booking, match alerts.','players.btn':'Open the App',
-        'clubs.h2':'For Clubs','clubs.p':'We connect your club to online bookings. Split payments: 95% to you, 5% to us.','clubs.l1':'Online schedule & payments','clubs.l2':'Secure payouts & reports','clubs.l3':'Marketing to players & events','clubs.btn':'Send Application','clubs.mail':'Email Support',
-        'q1':'Do I need an account to play?','a1':'No. Tap the button and log in quickly inside the app.',
-        'q2':'How do clubs get paid?','a2':'We process the player payment and automatically transfer 95% to your club, retaining a 5% fee.',
-        'q3':'How fast is onboarding?','a3':'Usually within 24 hours after verification and schedule upload.',
-        'legal.offer':'Public Offer','legal.privacy':'Privacy Policy','legal.cookies':'Cookies'
+      'hero.h1':'Book padel in one click. Onboard your club, no hassle.',
+      'hero.p':'Players go straight to the app. Clubs send a short form and go live within 24h.',
+      'cta.players':'Open the App','cta.clubs':'Onboard a Club',
+
+      'badge':'Demo','demo.h3':'How it works',
+      'demo.1':'Player taps “Open the App” and books a court.',
+      'demo.2':'Club submits a request — we connect schedule and payments.',
+      'demo.3':'Club payouts happen automatically.',
+
+      'players.h2':'For Players',
+      'players.p':'Find nearby courts, open play and tournaments. Instant booking and match alerts.',
+      'players.btn':'Open the App',
+
+      'clubs.h2':'For Clubs',
+      'clubs.p':'We connect your club to online bookings.',
+      'clubs.l1':'Online schedule & payments',
+      'clubs.l2':'Secure payouts',
+      'clubs.l3':'Marketing to players & events',
+      'clubs.btn':'Send Application',
+      'clubs.mail':'Email Support',
+
+      'q1':'Do I need an account to play?',
+      'a1':'No. Tap the button and log in quickly inside the app.',
+      'q2':'How do clubs get paid?',
+      'a2':'We process the player payment and automatically credit the club.',
+      'q3':'How fast is onboarding?',
+      'a3':'Usually within 24 hours after verification and schedule upload.',
+
+      'legal.offer':'Public Offer',
+      'legal.privacy':'Privacy Policy',
+      'legal.cookies':'Refund Policy'
+    }
       }
     };
 
     const setLang = (lng) => {
-      document.querySelectorAll('[data-i]').forEach(el => {
-        const key = el.getAttribute('data-i');
-        if (dict[lng] && dict[lng][key]) el.textContent = dict[lng][key];
-      });
-      document.documentElement.lang = lng === 'en' ? 'en' : 'ru';
-    };
-    document.querySelectorAll('[data-lang]').forEach(btn => btn.addEventListener('click', () => setLang(btn.dataset.lang)));
+    document.querySelectorAll('[data-i]').forEach(el => {
+      const key = el.getAttribute('data-i');
+      if (dict[lng] && dict[lng][key]) el.textContent = dict[lng][key];
+    });
+    document.documentElement.lang = lng === 'en' ? 'en' : 'ru';
+  };
+  document.querySelectorAll('[data-lang]').forEach(btn =>
+    btn.addEventListener('click', () => setLang(btn.dataset.lang))
+  );
 
-    // Set current year
-    document.getElementById('year').textContent = new Date().getFullYear();
+  // Current year
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-    // QUICK CONFIG: Replace placeholders with your real URLs via inline script or build step
-    // You can also set via query params for quick testing, e.g., ?app=https://app.example.com&form=https://forms.yandex.ru/xxx
-    const params = new URLSearchParams(location.search);
-    const app = params.get('app');
-    const form = params.get('form');
-    if (app) { document.getElementById('playersLink').href = app; document.querySelectorAll('a[href="APP_URL"]').forEach(a=>a.href=app); }
-    if (form) { document.getElementById('clubsLink').href = '#clubs'; document.querySelectorAll('a[href="CLUB_CONTACT_URL"]').forEach(a=>a.href=form); }
+  // Optional: allow ?form=<url> to override the “Отправить заявку” link
+  const params = new URLSearchParams(location.search);
+  const form = params.get('form');
+  if (form) {
+    document.querySelectorAll('a[href="CLUB_CONTACT_URL"]').forEach(a => a.href = form);
+  }
 
-    // Default language RU on .ru domain, EN otherwise
-    setLang(location.hostname.endsWith('.ru') ? 'ru' : 'en');
-  </script>
+  // Default language RU on .ru domain, EN otherwise
+  setLang(location.hostname.endsWith('.ru') ? 'ru' : 'en');
+</script>
 </body>
 </html>
