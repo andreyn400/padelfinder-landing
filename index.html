@@ -99,6 +99,11 @@
       border-radius: 8px;
       cursor: pointer;
       transition: all 0.3s;
+      font-family: inherit;
+    }
+    
+    .nav-tab:hover {
+      color: var(--text);
     }
     
     .nav-tab.active {
@@ -121,11 +126,17 @@
       font-weight: 600;
       font-size: 14px;
       transition: all 0.3s;
+      font-family: inherit;
+    }
+    
+    .lang-btn:hover {
+      border-color: var(--accent);
     }
     
     .lang-btn.active {
       border-color: var(--accent);
       color: var(--accent);
+      background: rgba(0, 217, 255, 0.1);
     }
     
     /* Container */
@@ -178,6 +189,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      font-family: inherit;
     }
     
     .btn-primary {
@@ -335,7 +347,6 @@
       border-radius: 16px;
       padding: 24px;
       transition: all 0.3s;
-      cursor: pointer;
     }
     
     .crm-step:hover {
@@ -370,37 +381,6 @@
       color: var(--text-muted);
       margin-top: 12px;
       padding-left: 56px;
-    }
-    
-    /* Stats */
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 24px;
-      margin: 60px 0;
-    }
-    
-    .stat-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 32px;
-      text-align: center;
-    }
-    
-    .stat-value {
-      font-size: 48px;
-      font-weight: 800;
-      background: var(--accent-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    .stat-label {
-      color: var(--text-muted);
-      margin-top: 8px;
-      font-size: 14px;
     }
     
     /* Footer */
@@ -698,76 +678,11 @@
                 <div class="step-number">1</div>
                 <h3 data-i18n="clubs.step1.title">Добавление локации и кортов</h3>
               </div>
-              <p data-i18n="clubs.step1.desc">Зарегистрируйте ваш клуб, добавьте корты (падел, теннис, футбол), получите QR-код и ссылку для бронирования</p>
-            </div>
-
-            <div class="crm-step">
-              <div class="crm-step-header">
-                <div class="step-number">2</div>
-                <h3 data-i18n="clubs.step2.title">Роли и права доступа</h3>
-              </div>
-              <p data-i18n="clubs.step2.desc">Настройте теги: Owner, Booking Admin, Coach, Reception — каждый видит только то, что ему нужно</p>
-            </div>
-
-            <div class="crm-step">
-              <div class="crm-step-header">
-                <div class="step-number">3</div>
-                <h3 data-i18n="clubs.step3.title">Типы бронирований</h3>
-              </div>
-              <p data-i18n="clubs.step3.desc">Создайте категории: свободная игра, тренировки, турниры, техобслуживание — с цветовой кодировкой в календаре</p>
-            </div>
-
-            <div class="crm-step">
-              <div class="crm-step-header">
-                <div class="step-number">4</div>
-                <h3 data-i18n="clubs.step4.title">Дополнительные услуги</h3>
-              </div>
-              <p data-i18n="clubs.step4.desc">Прокат ракеток, полотенца, сауна, тренеры — добавьте платные опции для увеличения среднего чека</p>
-            </div>
-
-            <div class="crm-step">
-              <div class="crm-step-header">
-                <div class="step-number">5</div>
-                <h3 data-i18n="clubs.step5.title">Настройки клуба</h3>
-              </div>
-              <p data-i18n="clubs.step5.desc">Логотип, цвета бренда, контакты, интеграция с Instagram, временные слоты</p>
-            </div>
-
-            <div class="crm-step">
-              <div class="crm-step-header">
-                <div class="step-number">6</div>
-                <h3 data-i18n="clubs.step6.title">Абонементы</h3>
-              </div>
-              <p data-i18n="clubs.step6.desc">Создайте членские пакеты: Standard, Gold, Unlimited — со скидками и привилегиями</p>
-            </div>
-
-            <div class="crm-step">
-              <div class="crm-step-header">
-                <div class="step-number">7</div>
-                <h3 data-i18n="clubs.step7.title">Часы доступности</h3>
-              </div>
-              <p data-i18n="clubs.step7.desc">Задайте рабочие часы для каждого корта, создайте исключения для выходных или техобслуживания</p>
-            </div>
-
-            <div class="crm-step">
-              <div class="crm-step-header">
-                <div class="step-number">8</div>
-                <h3 data-i18n="clubs.step8.title">Правила ценообразования</h3>
-              </div>
-              <p data-i18n="clubs.step8.desc">Гибкие тарифы по времени, дням недели, длительности. Пиковые и непиковые цены</p>
-            </div>
-
-            <div class="crm-step">
-              <div class="crm-step-header">
-                <div class="step-number">9</div>
-                <h3 data-i18n="clubs.step9.title">Окно бронирования</h3>
-              </div>
               <p data-i18n="clubs.step9.desc">Контролируйте, за сколько дней вперёд можно бронировать: 3 дня для гостей, 14 дней для членов клуба</p>
             </div>
 
             <div class="crm-step">
-              <div class
-                ="crm-step-header">
+              <div class="crm-step-header">
                 <div class="step-number">10</div>
                 <h3 data-i18n="clubs.step10.title">Правила отмены</h3>
               </div>
@@ -921,378 +836,366 @@
   </footer>
 
   <script>
-    // Translations
-    const translations = {
-      ru: {
-        brand: 'Padel Finder Russia',
-        'nav.players': 'Для игроков',
-        'nav.clubs': 'Для клубов',
-        'hero.title': 'Бронируйте корты в один клик. Управляйте клубом профессионально.',
-        'hero.subtitle': 'Мобильное приложение для игроков и полноценная CRM-система для падел-клубов',
-        
-        'players.title': 'Мобильное приложение для игроков',
-        'players.subtitle': 'Всё для игры в падел в одном приложении: бронирование кортов, открытые матчи, турниры и сообщество',
-        
-        'players.feature1.title': 'Главная',
-        'players.feature1.desc': 'Переключатель видов спорта (падел, теннис, футбол), ваш уровень и рейтинг, быстрое бронирование корта',
-        'players.feature1.point1': 'Уровень игрока и дивизион',
-        'players.feature1.point2': 'Уведомления о матчах',
-        'players.feature1.point3': 'Кнопка быстрого бронирования',
-        
-        'players.feature2.title': 'Открытые матчи',
-        'players.feature2.desc': 'Находите партнёров для игры, создавайте открытые матчи и присоединяйтесь к существующим',
-        'players.feature2.point1': 'Поиск по клубам и уровню',
-        'players.feature2.point2': 'Создание объявлений о матчах',
-        'players.feature2.point3': 'Система подтверждения игроков',
-        
-        'players.feature3.title': 'Турниры',
-        'players.feature3.desc': 'Участвуйте в турнирах клубов: Round Robin, Knockout, Hybrid и Americano',
-        'players.feature3.point1': 'Регистрация на турниры',
-        'players.feature3.point2': 'Визуальная сетка матчей',
-        'players.feature3.point3': 'Early Bird цены',
-        
-        'players.feature4.title': 'Маркет',
-        'players.feature4.desc': 'Покупайте и продавайте инвентарь, бронируйте тренировки и находите специальные предложения',
-        'players.feature4.point1': 'Ракетки, мячи и аксессуары',
-        'players.feature4.point2': 'Индивидуальные тренировки',
-        'players.feature4.point3': 'Клубные предложения',
-        
-        'players.feature5.title': 'Сообщество',
-        'players.feature5.desc': 'Делитесь моментами, следите за новостями клубов и общайтесь с другими игроками',
-        'players.feature5.point1': 'Посты и фотографии',
-        'players.feature5.point2': 'Новости клубов',
-        'players.feature5.point3': 'Лидеры сообщества',
-        
-        'players.feature6.title': 'Профиль',
-        'players.feature6.desc': 'Отслеживайте статистику, рейтинг, историю матчей и бронирований',
-        'players.feature6.point1': 'Статистика побед/поражений',
-        'players.feature6.point2': 'Рейтинг и дивизион',
-        'players.feature6.point3': 'История бронирований',
-        
-        'players.download.title': 'Скачайте приложение',
-        
-        'clubs.title': 'CRM-система для падел-клубов',
-        'clubs.subtitle': 'Полноценная система управления клубом: корты, бронирования, цены, аналитика и платежи',
-        
-        'clubs.benefit1.title': 'Управление бронированиями',
-        'clubs.benefit1.desc': 'Полный контроль над расписанием кортов, автоматические уведомления, интеграция с мобильным приложением',
-        
-        'clubs.benefit2.title': 'Гибкое ценообразование',
-        'clubs.benefit2.desc': 'Настраивайте цены по времени суток, дням недели, длительности. Пиковые и непиковые тарифы',
-        
-        'clubs.benefit3.title': 'Аналитика и отчёты',
-        'clubs.benefit3.desc': 'Панель доходов, загрузка кортов, профиль активности, детальные отчёты по каждой брони',
-        
-        'clubs.benefit4.title': 'Управление пользователями',
-        'clubs.benefit4.desc': 'Роли и права доступа, абонементы, теги, академии, тренеры и администраторы',
-        
-        'clubs.benefit5.title': 'Маркетинг и контент',
-        'clubs.benefit5.desc': 'Новости, push-уведомления, слайдеры, спонсоры, интеграция с Instagram',
-        
-        'clubs.benefit6.title': 'Настройки и автоматизация',
-        'clubs.benefit6.desc': 'Часы доступности, квоты, окно бронирования, правила отмены, дополнительные услуги',
-        
-        'clubs.crm.title': 'Возможности CRM-системы',
-        
-        'clubs.step1.title': 'Добавление локации и кортов',
-        'clubs.step1.desc': 'Зарегистрируйте ваш клуб, добавьте корты (падел, теннис, футбол), получите QR-код и ссылку для бронирования',
-        
-        'clubs.step2.title': 'Роли и права доступа',
-        'clubs.step2.desc': 'Настройте теги: Owner, Booking Admin, Coach, Reception — каждый видит только то, что ему нужно',
-        
-        'clubs.step3.title': 'Типы бронирований',
-        'clubs.step3.desc': 'Создайте категории: свободная игра, тренировки, турниры, техобслуживание — с цветовой кодировкой в календаре',
-        
-        'clubs.step4.title': 'Дополнительные услуги',
-        'clubs.step4.desc': 'Прокат ракеток, полотенца, сауна, тренеры — добавьте платные опции для увеличения среднего чека',
-        
-        'clubs.step5.title': 'Настройки клуба',
-        'clubs.step5.desc': 'Логотип, цвета бренда, контакты, интеграция с Instagram, временные слоты',
-        
-        'clubs.step6.title': 'Абонементы',
-        'clubs.step6.desc': 'Создайте членские пакеты: Standard, Gold, Unlimited — со скидками и привилегиями',
-        
-        'clubs.step7.title': 'Часы доступности',
-        'clubs.step7.desc': 'Задайте рабочие часы для каждого корта, создайте исключения для выходных или техобслуживания',
-        
-        'clubs.step8.title': 'Правила ценообразования',
-        'clubs.step8.desc': 'Гибкие тарифы по времени, дням недели, длительности. Пиковые и непиковые цены',
-        
-        'clubs.step9.title': 'Окно бронирования',
-        'clubs.step9.desc': 'Контролируйте, за сколько дней вперёд можно бронировать: 3 дня для гостей, 14 дней для членов клуба',
-        
-        'clubs.step10.title': 'Правила отмены',
-        'clubs.step10.desc': 'Установите минимальное время для отмены: например, за 4 часа до начала — защищает от поздних отмен',
-        
-        'clubs.step11.title': 'Квоты',
-        'clubs.step11.desc': 'Ограничьте количество бронирований на игрока: например, максимум 3 часа в день или 2 брони',
-        
-        'clubs.step12.title': 'Цены на дополнения',
-        'clubs.step12.desc': 'Настройте стоимость проката ракеток, полотенец, сауны — с тарификацией за час или за единицу',
-        
-        'clubs.step13.title': 'Условия бронирования',
-        'clubs.step13.desc': 'Задайте правила: минимальная длительность 30 минут, максимальная 2 часа',
-        
-        'clubs.step14.title': 'Панель доходов',
-        'clubs.step14.desc': 'Аналитика в реальном времени: выручка, количество бронирований, статус оплат, экспорт в Excel',
-        
-        'clubs.step15.title': 'Профиль активности',
-        'clubs.step15.desc': 'Визуальная карта загрузки кортов по часам — определяйте пики и периоды низкого спроса',
-        
-        'clubs.step16.title': 'Отчёты',
-        'clubs.step16.desc': 'Ежедневные сводки: количество бронирований, выручка, загрузка кортов, уникальные игроки',
-        
-        'clubs.step17.title': 'Логи действий',
-        'clubs.step17.desc': 'Полная история: создание, изменение, отмена бронирований — прозрачность и контроль',
-        
-        'clubs.step18.title': 'База пользователей',
-        'clubs.step18.desc': 'Управление игроками, администраторами, тренерами — с тегами, контактами и историей активности',
-        
-        'clubs.step19.title': 'Новости',
-        'clubs.step19.desc': 'Публикуйте анонсы, обновления и объявления — видны игрокам в приложении',
-        
-        'clubs.step20.title': 'Слайдер баннеров',
-        'clubs.step20.desc': 'Добавляйте промо-баннеры на главную страницу: турниры, партнёры, акции',
-        
-        'clubs.step21.title': 'Спонсоры',
-        'clubs.step21.desc': 'Размещайте логотипы партнёров и брендов в приложении и на странице бронирования',
-        
-        'clubs.step22.title': 'Push-уведомления',
-        'clubs.step22.desc': 'Отправляйте мгновенные сообщения игрокам: напоминания о турнирах, акциях, новостях',
-        
-        'clubs.cta.title': 'Подключите ваш клуб',
-        'clubs.cta.subtitle': 'Старт за 24 часа после верификации документов',
-        'clubs.cta.button': 'Отправить заявку',
-        'clubs.cta.email': 'Написать на почту',
-        
-        'footer.description': 'Мобильное приложение для бронирования кортов и CRM-система для управления падел-клубами',
-        'footer.links.title': 'Ссылки',
-        'footer.links.offer': 'Публичная оферта',
-        'footer.links.privacy': 'Политика конфиденциальности',
-        'footer.links.refund': 'Политика возврата',
-        'footer.contact.title': 'Контакты',
-        'footer.contact.support': 'Поддержка',
-        'footer.contact.faq': 'FAQ',
-        'footer.rights': 'Все права защищены.'
-      },
-      en: {
-        brand: 'Padel Finder Russia',
-        'nav.players': 'For Players',
-        'nav.clubs': 'For Clubs',
-        'hero.title': 'Book courts in one click. Manage your club professionally.',
-        'hero.subtitle': 'Mobile app for players and complete CRM system for padel clubs',
-        
-        'players.title': 'Mobile App for Players',
-        'players.subtitle': 'Everything for padel in one app: court booking, open matches, tournaments and community',
-        
-        'players.feature1.title': 'Home',
-        'players.feature1.desc': 'Sport switcher (padel, tennis, football), your level and rating, quick court booking',
-        'players.feature1.point1': 'Player level and division',
-        'players.feature1.point2': 'Match notifications',
-        'players.feature1.point3': 'Quick booking button',
-        
-        'players.feature2.title': 'Open Matches',
-        'players.feature2.desc': 'Find partners to play, create open matches and join existing ones',
-        'players.feature2.point1': 'Search by clubs and level',
-        'players.feature2.point2': 'Create match announcements',
-        'players.feature2.point3': 'Player confirmation system',
-        
-        'players.feature3.title': 'Tournaments',
-        'players.feature3.desc': 'Participate in club tournaments: Round Robin, Knockout, Hybrid and Americano',
-        'players.feature3.point1': 'Tournament registration',
-        'players.feature3.point2': 'Visual match grid',
-        'players.feature3.point3': 'Early Bird pricing',
-        
-        'players.feature4.title': 'Market',
-        'players.feature4.desc': 'Buy and sell equipment, book training sessions and find special offers',
-        'players.feature4.point1': 'Rackets, balls and accessories',
-        'players.feature4.point2': 'Individual training',
-        'players.feature4.point3': 'Club offers',
-        
-        'players.feature5.title': 'Community',
-        'players.feature5.desc': 'Share moments, follow club news and connect with other players',
-        'players.feature5.point1': 'Posts and photos',
-        'players.feature5.point2': 'Club news',
-        'players.feature5.point3': 'Community leaders',
-        
-        'players.feature6.title': 'Profile',
-        'players.feature6.desc': 'Track statistics, rating, match history and bookings',
-        'players.feature6.point1': 'Win/loss statistics',
-        'players.feature6.point2': 'Rating and division',
-        'players.feature6.point3': 'Booking history',
-        
-        'players.download.title': 'Download the App',
-        
-        'clubs.title': 'CRM System for Padel Clubs',
-        'clubs.subtitle': 'Complete club management system: courts, bookings, pricing, analytics and payments',
-        
-        'clubs.benefit1.title': 'Booking Management',
-        'clubs.benefit1.desc': 'Full control over court schedules, automatic notifications, mobile app integration',
-        
-        'clubs.benefit2.title': 'Flexible Pricing',
-        'clubs.benefit2.desc': 'Set prices by time of day, weekdays, duration. Peak and off-peak rates',
-        
-        'clubs.benefit3.title': 'Analytics & Reports',
-        'clubs.benefit3.desc': 'Revenue dashboard, court utilization, activity profile, detailed booking reports',
-        
-        'clubs.benefit4.title': 'User Management',
-        'clubs.benefit4.desc': 'Roles and permissions, memberships, tags, academies, coaches and administrators',
-        
-        'clubs.benefit5.title': 'Marketing & Content',
-        'clubs.benefit5.desc': 'News, push notifications, sliders, sponsors, Instagram integration',
-        
-        'clubs.benefit6.title': 'Settings & Automation',
-        'clubs.benefit6.desc': 'Availability hours, quotas, booking window, cancellation rules, additional services',
-        
-        'clubs.crm.title': 'CRM System Features',
-        
-        'clubs.step1.title': 'Add Location and Courts',
-        'clubs.step1.desc': 'Register your club, add courts (padel, tennis, football), get QR code and booking link',
-        
-        'clubs.step2.title': 'Roles and Permissions',
-        'clubs.step2.desc': 'Set up tags: Owner, Booking Admin, Coach, Reception — everyone sees only what they need',
-        
-        'clubs.step3.title': 'Booking Types',
-        'clubs.step3.desc': 'Create categories: open play, training, tournaments, maintenance — with color coding in calendar',
-        
-        'clubs.step4.title': 'Additional Services',
-        'clubs.step4.desc': 'Racket rental, towels, sauna, coaches — add paid options to increase average check',
-        
-        'clubs.step5.title': 'Club Settings',
-        'clubs.step5.desc': 'Logo, brand colors, contacts, Instagram integration, time slots',
-        
-        'clubs.step6.title': 'Memberships',
-        'clubs.step6.desc': 'Create membership packages: Standard, Gold, Unlimited — with discounts and privileges',
-        
-        'clubs.step7.title': 'Availability Hours',
-        'clubs.step7.desc': 'Set working hours for each court, create exceptions for weekends or maintenance',
-        
-        'clubs.step8.title': 'Pricing Rules',
-        'clubs.step8.desc': 'Flexible rates by time, weekdays, duration. Peak and off-peak prices',
-        
-        'clubs.step9.title': 'Booking Window',
-        'clubs.step9.desc': 'Control how far in advance bookings are allowed: 3 days for guests, 14 days for members',
-        
-        'clubs.step10.title': 'Cancellation Rules',
-        'clubs.step10.desc': 'Set minimum cancellation time: e.g., 4 hours before start — protects from late cancellations',
-        
-        'clubs.step11.title': 'Quotas',
-        'clubs.step11.desc': 'Limit bookings per player: e.g., maximum 3 hours per day or 2 bookings',
-        
-        'clubs.step12.title': 'Addon Pricing',
-        'clubs.step12.desc': 'Set prices for racket rental, towels, sauna — with per hour or per unit billing',
-        
-        'clubs.step13.title': 'Booking Conditions',
-        'clubs.step13.desc': 'Set rules: minimum duration 30 minutes, maximum 2 hours',
-        
-        'clubs.step14.title': 'Revenue Dashboard',
-        'clubs.step14.desc': 'Real-time analytics: revenue, number of bookings, payment status, Excel export',
-        
-        'clubs.step15.title': 'Activity Profile',
-        'clubs.step15.desc': 'Visual court utilization map by hour — identify peaks and low-demand periods',
-        
-        'clubs.step16.title': 'Reports',
-        'clubs.step16.desc': 'Daily summaries: number of bookings, revenue, court utilization, unique players',
-        
-        'clubs.step17.title': 'Action Logs',
-        'clubs.step17.desc': 'Complete history: creation, modification, cancellation of bookings — transparency and control',
-        
-        'clubs.step18.title': 'User Database',
-        'clubs.step18.desc': 'Manage players, administrators, coaches — with tags, contacts and activity history',
-        
-        'clubs.step19.title': 'News',
-        'clubs.step19.desc': 'Publish announcements, updates and news — visible to players in the app',
-        
-        'clubs.step20.title': 'Banner Slider',
-        'clubs.step20.desc': 'Add promo banners to homepage: tournaments, partners, promotions',
-        
-        'clubs.step21.title': 'Sponsors',
-        'clubs.step21.desc': 'Display partner and brand logos in the app and on booking page',
-        
-        'clubs.step22.title': 'Push Notifications',
-        'clubs.step22.desc': 'Send instant messages to players: reminders about tournaments, promotions, news',
-        
-        'clubs.cta.title': 'Connect Your Club',
-        'clubs.cta.subtitle': 'Launch within 24 hours after document verification',
-        'clubs.cta.button': 'Submit Application',
-        'clubs.cta.email': 'Email Us',
-        
-        'footer.description': 'Mobile app for court booking and CRM system for managing padel clubs',
-        'footer.links.title': 'Links',
-        'footer.links.offer': 'Public Offer',
-        'footer.links.privacy': 'Privacy Policy',
-        'footer.links.refund': 'Refund Policy',
-        'footer.contact.title': 'Contacts',
-        'footer.contact.support': 'Support',
-        'footer.contact.faq': 'FAQ',
-        'footer.rights': 'All rights reserved.'
+    // Wait for DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      
+      // Translations object
+      const translations = {
+        ru: {
+          brand: 'Padel Finder Russia',
+          'nav.players': 'Для игроков',
+          'nav.clubs': 'Для клубов',
+          'hero.title': 'Бронируйте корты в один клик. Управляйте клубом профессионально.',
+          'hero.subtitle': 'Мобильное приложение для игроков и полноценная CRM-система для падел-клубов',
+          'players.title': 'Мобильное приложение для игроков',
+          'players.subtitle': 'Всё для игры в падел в одном приложении: бронирование кортов, открытые матчи, турниры и сообщество',
+          'players.feature1.title': 'Главная',
+          'players.feature1.desc': 'Переключатель видов спорта (падел, теннис, футбол), ваш уровень и рейтинг, быстрое бронирование корта',
+          'players.feature1.point1': 'Уровень игрока и дивизион',
+          'players.feature1.point2': 'Уведомления о матчах',
+          'players.feature1.point3': 'Кнопка быстрого бронирования',
+          'players.feature2.title': 'Открытые матчи',
+          'players.feature2.desc': 'Находите партнёров для игры, создавайте открытые матчи и присоединяйтесь к существующим',
+          'players.feature2.point1': 'Поиск по клубам и уровню',
+          'players.feature2.point2': 'Создание объявлений о матчах',
+          'players.feature2.point3': 'Система подтверждения игроков',
+          'players.feature3.title': 'Турниры',
+          'players.feature3.desc': 'Участвуйте в турнирах клубов: Round Robin, Knockout, Hybrid и Americano',
+          'players.feature3.point1': 'Регистрация на турниры',
+          'players.feature3.point2': 'Визуальная сетка матчей',
+          'players.feature3.point3': 'Early Bird цены',
+          'players.feature4.title': 'Маркет',
+          'players.feature4.desc': 'Покупайте и продавайте инвентарь, бронируйте тренировки и находите специальные предложения',
+          'players.feature4.point1': 'Ракетки, мячи и аксессуары',
+          'players.feature4.point2': 'Индивидуальные тренировки',
+          'players.feature4.point3': 'Клубные предложения',
+          'players.feature5.title': 'Сообщество',
+          'players.feature5.desc': 'Делитесь моментами, следите за новостями клубов и общайтесь с другими игроками',
+          'players.feature5.point1': 'Посты и фотографии',
+          'players.feature5.point2': 'Новости клубов',
+          'players.feature5.point3': 'Лидеры сообщества',
+          'players.feature6.title': 'Профиль',
+          'players.feature6.desc': 'Отслеживайте статистику, рейтинг, историю матчей и бронирований',
+          'players.feature6.point1': 'Статистика побед/поражений',
+          'players.feature6.point2': 'Рейтинг и дивизион',
+          'players.feature6.point3': 'История бронирований',
+          'players.download.title': 'Скачайте приложение',
+          'clubs.title': 'CRM-система для падел-клубов',
+          'clubs.subtitle': 'Полноценная система управления клубом: корты, бронирования, цены, аналитика и платежи',
+          'clubs.benefit1.title': 'Управление бронированиями',
+          'clubs.benefit1.desc': 'Полный контроль над расписанием кортов, автоматические уведомления, интеграция с мобильным приложением',
+          'clubs.benefit2.title': 'Гибкое ценообразование',
+          'clubs.benefit2.desc': 'Настраивайте цены по времени суток, дням недели, длительности. Пиковые и непиковые тарифы',
+          'clubs.benefit3.title': 'Аналитика и отчёты',
+          'clubs.benefit3.desc': 'Панель доходов, загрузка кортов, профиль активности, детальные отчёты по каждой брони',
+          'clubs.benefit4.title': 'Управление пользователями',
+          'clubs.benefit4.desc': 'Роли и права доступа, абонементы, теги, академии, тренеры и администраторы',
+          'clubs.benefit5.title': 'Маркетинг и контент',
+          'clubs.benefit5.desc': 'Новости, push-уведомления, слайдеры, спонсоры, интеграция с Instagram',
+          'clubs.benefit6.title': 'Настройки и автоматизация',
+          'clubs.benefit6.desc': 'Часы доступности, квоты, окно бронирования, правила отмены, дополнительные услуги',
+          'clubs.crm.title': 'Возможности CRM-системы',
+          'clubs.step1.title': 'Добавление локации и кортов',
+          'clubs.step1.desc': 'Зарегистрируйте ваш клуб, добавьте корты (падел, теннис, футбол), получите QR-код и ссылку для бронирования',
+          'clubs.step2.title': 'Роли и права доступа',
+          'clubs.step2.desc': 'Настройте теги: Owner, Booking Admin, Coach, Reception — каждый видит только то, что ему нужно',
+          'clubs.step3.title': 'Типы бронирований',
+          'clubs.step3.desc': 'Создайте категории: свободная игра, тренировки, турниры, техобслуживание — с цветовой кодировкой в календаре',
+          'clubs.step4.title': 'Дополнительные услуги',
+          'clubs.step4.desc': 'Прокат ракеток, полотенца, сауна, тренеры — добавьте платные опции для увеличения среднего чека',
+          'clubs.step5.title': 'Настройки клуба',
+          'clubs.step5.desc': 'Логотип, цвета бренда, контакты, интеграция с Instagram, временные слоты',
+          'clubs.step6.title': 'Абонементы',
+          'clubs.step6.desc': 'Создайте членские пакеты: Standard, Gold, Unlimited — со скидками и привилегиями',
+          'clubs.step7.title': 'Часы доступности',
+          'clubs.step7.desc': 'Задайте рабочие часы для каждого корта, создайте исключения для выходных или техобслуживания',
+          'clubs.step8.title': 'Правила ценообразования',
+          'clubs.step8.desc': 'Гибкие тарифы по времени, дням недели, длительности. Пиковые и непиковые цены',
+          'clubs.step9.title': 'Окно бронирования',
+          'clubs.step9.desc': 'Контролируйте, за сколько дней вперёд можно бронировать: 3 дня для гостей, 14 дней для членов клуба',
+          'clubs.step10.title': 'Правила отмены',
+          'clubs.step10.desc': 'Установите минимальное время для отмены: например, за 4 часа до начала — защищает от поздних отмен',
+          'clubs.step11.title': 'Квоты',
+          'clubs.step11.desc': 'Ограничьте количество бронирований на игрока: например, максимум 3 часа в день или 2 брони',
+          'clubs.step12.title': 'Цены на дополнения',
+          'clubs.step12.desc': 'Настройте стоимость проката ракеток, полотенец, сауны — с тарификацией за час или за единицу',
+          'clubs.step13.title': 'Условия бронирования',
+          'clubs.step13.desc': 'Задайте правила: минимальная длительность 30 минут, максимальная 2 часа',
+          'clubs.step14.title': 'Панель доходов',
+          'clubs.step14.desc': 'Аналитика в реальном времени: выручка, количество бронирований, статус оплат, экспорт в Excel',
+          'clubs.step15.title': 'Профиль активности',
+          'clubs.step15.desc': 'Визуальная карта загрузки кортов по часам — определяйте пики и периоды низкого спроса',
+          'clubs.step16.title': 'Отчёты',
+          'clubs.step16.desc': 'Ежедневные сводки: количество бронирований, выручка, загрузка кортов, уникальные игроки',
+          'clubs.step17.title': 'Логи действий',
+          'clubs.step17.desc': 'Полная история: создание, изменение, отмена бронирований — прозрачность и контроль',
+          'clubs.step18.title': 'База пользователей',
+          'clubs.step18.desc': 'Управление игроками, администраторами, тренерами — с тегами, контактами и историей активности',
+          'clubs.step19.title': 'Новости',
+          'clubs.step19.desc': 'Публикуйте анонсы, обновления и объявления — видны игрокам в приложении',
+          'clubs.step20.title': 'Слайдер баннеров',
+          'clubs.step20.desc': 'Добавляйте промо-баннеры на главную страницу: турниры, партнёры, акции',
+          'clubs.step21.title': 'Спонсоры',
+          'clubs.step21.desc': 'Размещайте логотипы партнёров и брендов в приложении и на странице бронирования',
+          'clubs.step22.title': 'Push-уведомления',
+          'clubs.step22.desc': 'Отправляйте мгновенные сообщения игрокам: напоминания о турнирах, акциях, новостях',
+          'clubs.cta.title': 'Подключите ваш клуб',
+          'clubs.cta.subtitle': 'Старт за 24 часа после верификации документов',
+          'clubs.cta.button': 'Отправить заявку',
+          'clubs.cta.email': 'Написать на почту',
+          'footer.description': 'Мобильное приложение для бронирования кортов и CRM-система для управления падел-клубами',
+          'footer.links.title': 'Ссылки',
+          'footer.links.offer': 'Публичная оферта',
+          'footer.links.privacy': 'Политика конфиденциальности',
+          'footer.links.refund': 'Политика возврата',
+          'footer.contact.title': 'Контакты',
+          'footer.contact.support': 'Поддержка',
+          'footer.contact.faq': 'FAQ',
+          'footer.rights': 'Все права защищены.'
+        },
+        en: {
+          brand: 'Padel Finder Russia',
+          'nav.players': 'For Players',
+          'nav.clubs': 'For Clubs',
+          'hero.title': 'Book courts in one click. Manage your club professionally.',
+          'hero.subtitle': 'Mobile app for players and complete CRM system for padel clubs',
+          'players.title': 'Mobile App for Players',
+          'players.subtitle': 'Everything for padel in one app: court booking, open matches, tournaments and community',
+          'players.feature1.title': 'Home',
+          'players.feature1.desc': 'Sport switcher (padel, tennis, football), your level and rating, quick court booking',
+          'players.feature1.point1': 'Player level and division',
+          'players.feature1.point2': 'Match notifications',
+          'players.feature1.point3': 'Quick booking button',
+          'players.feature2.title': 'Open Matches',
+          'players.feature2.desc': 'Find partners to play, create open matches and join existing ones',
+          'players.feature2.point1': 'Search by clubs and level',
+          'players.feature2.point2': 'Create match announcements',
+          'players.feature2.point3': 'Player confirmation system',
+          'players.feature3.title': 'Tournaments',
+          'players.feature3.desc': 'Participate in club tournaments: Round Robin, Knockout, Hybrid and Americano',
+          'players.feature3.point1': 'Tournament registration',
+          'players.feature3.point2': 'Visual match grid',
+          'players.feature3.point3': 'Early Bird pricing',
+          'players.feature4.title': 'Market',
+          'players.feature4.desc': 'Buy and sell equipment, book training sessions and find special offers',
+          'players.feature4.point1': 'Rackets, balls and accessories',
+          'players.feature4.point2': 'Individual training',
+          'players.feature4.point3': 'Club offers',
+          'players.feature5.title': 'Community',
+          'players.feature5.desc': 'Share moments, follow club news and connect with other players',
+          'players.feature5.point1': 'Posts and photos',
+          'players.feature5.point2': 'Club news',
+          'players.feature5.point3': 'Community leaders',
+          'players.feature6.title': 'Profile',
+          'players.feature6.desc': 'Track statistics, rating, match history and bookings',
+          'players.feature6.point1': 'Win/loss statistics',
+          'players.feature6.point2': 'Rating and division',
+          'players.feature6.point3': 'Booking history',
+          'players.download.title': 'Download the App',
+          'clubs.title': 'CRM System for Padel Clubs',
+          'clubs.subtitle': 'Complete club management system: courts, bookings, pricing, analytics and payments',
+          'clubs.benefit1.title': 'Booking Management',
+          'clubs.benefit1.desc': 'Full control over court schedules, automatic notifications, mobile app integration',
+          'clubs.benefit2.title': 'Flexible Pricing',
+          'clubs.benefit2.desc': 'Set prices by time of day, weekdays, duration. Peak and off-peak rates',
+          'clubs.benefit3.title': 'Analytics & Reports',
+          'clubs.benefit3.desc': 'Revenue dashboard, court utilization, activity profile, detailed booking reports',
+          'clubs.benefit4.title': 'User Management',
+          'clubs.benefit4.desc': 'Roles and permissions, memberships, tags, academies, coaches and administrators',
+          'clubs.benefit5.title': 'Marketing & Content',
+          'clubs.benefit5.desc': 'News, push notifications, sliders, sponsors, Instagram integration',
+          'clubs.benefit6.title': 'Settings & Automation',
+          'clubs.benefit6.desc': 'Availability hours, quotas, booking window, cancellation rules, additional services',
+          'clubs.crm.title': 'CRM System Features',
+          'clubs.step1.title': 'Add Location and Courts',
+          'clubs.step1.desc': 'Register your club, add courts (padel, tennis, football), get QR code and booking link',
+          'clubs.step2.title': 'Roles and Permissions',
+          'clubs.step2.desc': 'Set up tags: Owner, Booking Admin, Coach, Reception — everyone sees only what they need',
+          'clubs.step3.title': 'Booking Types',
+          'clubs.step3.desc': 'Create categories: open play, training, tournaments, maintenance — with color coding in calendar',
+          'clubs.step4.title': 'Additional Services',
+          'clubs.step4.desc': 'Racket rental, towels, sauna, coaches — add paid options to increase average check',
+          'clubs.step5.title': 'Club Settings',
+          'clubs.step5.desc': 'Logo, brand colors, contacts, Instagram integration, time slots',
+          'clubs.step6.title': 'Memberships',
+          'clubs.step6.desc': 'Create membership packages: Standard, Gold, Unlimited — with discounts and privileges',
+          'clubs.step7.title': 'Availability Hours',
+          'clubs.step7.desc': 'Set working hours for each court, create exceptions for weekends or maintenance',
+          'clubs.step8.title': 'Pricing Rules',
+          'clubs.step8.desc': 'Flexible rates by time, weekdays, duration. Peak and off-peak prices',
+          'clubs.step9.title': 'Booking Window',
+          'clubs.step9.desc': 'Control how far in advance bookings are allowed: 3 days for guests, 14 days for members',
+          'clubs.step10.title': 'Cancellation Rules',
+          'clubs.step10.desc': 'Set minimum cancellation time: e.g., 4 hours before start — protects from late cancellations',
+          'clubs.step11.title': 'Quotas',
+          'clubs.step11.desc': 'Limit bookings per player: e.g., maximum 3 hours per day or 2 bookings',
+          'clubs.step12.title': 'Addon Pricing',
+          'clubs.step12.desc': 'Set prices for racket rental, towels, sauna — with per hour or per unit billing',
+          'clubs.step13.title': 'Booking Conditions',
+          'clubs.step13.desc': 'Set rules: minimum duration 30 minutes, maximum 2 hours',
+          'clubs.step14.title': 'Revenue Dashboard',
+          'clubs.step14.desc': 'Real-time analytics: revenue, number of bookings, payment status, Excel export',
+          'clubs.step15.title': 'Activity Profile',
+          'clubs.step15.desc': 'Visual court utilization map by hour — identify peaks and low-demand periods',
+          'clubs.step16.title': 'Reports',
+          'clubs.step16.desc': 'Daily summaries: number of bookings, revenue, court utilization, unique players',
+          'clubs.step17.title': 'Action Logs',
+          'clubs.step17.desc': 'Complete history: creation, modification, cancellation of bookings — transparency and control',
+          'clubs.step18.title': 'User Database',
+          'clubs.step18.desc': 'Manage players, administrators, coaches — with tags, contacts and activity history',
+          'clubs.step19.title': 'News',
+          'clubs.step19.desc': 'Publish announcements, updates and news — visible to players in the app',
+          'clubs.step20.title': 'Banner Slider',
+          'clubs.step20.desc': 'Add promo banners to homepage: tournaments, partners, promotions',
+          'clubs.step21.title': 'Sponsors',
+          'clubs.step21.desc': 'Display partner and brand logos in the app and on booking page',
+          'clubs.step22.title': 'Push Notifications',
+          'clubs.step22.desc': 'Send instant messages to players: reminders about tournaments, promotions, news',
+          'clubs.cta.title': 'Connect Your Club',
+          'clubs.cta.subtitle': 'Launch within 24 hours after document verification',
+          'clubs.cta.button': 'Submit Application',
+          'clubs.cta.email': 'Email Us',
+          'footer.description': 'Mobile app for court booking and CRM system for managing padel clubs',
+          'footer.links.title': 'Links',
+          'footer.links.offer': 'Public Offer',
+          'footer.links.privacy': 'Privacy Policy',
+          'footer.links.refund': 'Refund Policy',
+          'footer.contact.title': 'Contacts',
+          'footer.contact.support': 'Support',
+          'footer.contact.faq': 'FAQ',
+          'footer.rights': 'All rights reserved.'
+        }
+      };
+
+      // Language switcher function
+      function setLanguage(lang) {
+        document.documentElement.lang = lang;
+        
+        // Update all elements with data-i18n
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+          const key = el.getAttribute('data-i18n');
+          if (translations[lang] && translations[lang][key]) {
+            el.textContent = translations[lang][key];
+          }
+        });
+        
+        // Update active language button
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+          if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
       }
-    };
 
-    // Language switcher
-    function setLanguage(lang) {
-      document.documentElement.lang = lang;
-      
-      // Update all elements with data-i18n
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data
-                                    -i18n');
-        if (translations[lang] && translations[lang][key]) {
-          el.textContent = translations[lang][key];
-        }
-      });
-      
-      // Update active language button
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        if (btn.dataset.lang === lang) {
-          btn.classList.add('active');
-        } else {
-          btn.classList.remove('active');
-        }
-      });
-    }
+      // Tab switcher function
+      function switchTab(tabName) {
+        // Update nav tabs
+        document.querySelectorAll('.nav-tab').forEach(function(tab) {
+          if (tab.getAttribute('data-tab') === tabName) {
+            tab.classList.add('active');
+          } else {
+            tab.classList.remove('active');
+          }
+        });
+        
+        // Update content
+        document.querySelectorAll('.tab-content').forEach(function(content) {
+          if (content.id === tabName + '-content') {
+            content.classList.add('active');
+          } else {
+            content.classList.remove('active');
+          }
+        });
+      }
 
-    // Language button listeners
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        setLanguage(btn.dataset.lang);
+      // Language button listeners
+      document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          setLanguage(btn.getAttribute('data-lang'));
+        });
       });
+
+      // Tab button listeners
+      document.querySelectorAll('.nav-tab').forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          switchTab(tab.getAttribute('data-tab'));
+        });
+      });
+
+      // Current year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Initialize with Russian language
+      setLanguage('ru');
+      
+      console.log('Padel Finder Russia website loaded successfully!');
     });
-
-    // Tab switcher
-    function switchTab(tabName) {
-      // Update nav tabs
-      document.querySelectorAll('.nav-tab').forEach(tab => {
-        if (tab.dataset.tab === tabName) {
-          tab.classList.add('active');
-        } else {
-          tab.classList.remove('active');
-        }
-      });
-
-      
-      // Update content
-      document.querySelectorAll('.tab-content').forEach(content => {
-        if (content.id === `${tabName}-content`) {
-          content.classList.add('active');
-        } else {
-          content.classList.remove('active');
-        }
-      });
-    }
-
-    // Tab button listeners
-    document.querySelectorAll('.nav-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        switchTab(tab.dataset.tab);
-      });
-    });
-
-    // Current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Initialize with Russian language
-    setLanguage('ru');
   </script>
 </body>
-</html>
+</html>n="clubs.step1.desc">Зарегистрируйте ваш клуб, добавьте корты (падел, теннис, футбол), получите QR-код и ссылку для бронирования</p>
+            </div>
+
+            <div class="crm-step">
+              <div class="crm-step-header">
+                <div class="step-number">2</div>
+                <h3 data-i18n="clubs.step2.title">Роли и права доступа</h3>
+              </div>
+              <p data-i18n="clubs.step2.desc">Настройте теги: Owner, Booking Admin, Coach, Reception — каждый видит только то, что ему нужно</p>
+            </div>
+
+            <div class="crm-step">
+              <div class="crm-step-header">
+                <div class="step-number">3</div>
+                <h3 data-i18n="clubs.step3.title">Типы бронирований</h3>
+              </div>
+              <p data-i18n="clubs.step3.desc">Создайте категории: свободная игра, тренировки, турниры, техобслуживание — с цветовой кодировкой в календаре</p>
+            </div>
+
+            <div class="crm-step">
+              <div class="crm-step-header">
+                <div class="step-number">4</div>
+                <h3 data-i18n="clubs.step4.title">Дополнительные услуги</h3>
+              </div>
+              <p data-i18n="clubs.step4.desc">Прокат ракеток, полотенца, сауна, тренеры — добавьте платные опции для увеличения среднего чека</p>
+            </div>
+
+            <div class="crm-step">
+              <div class="crm-step-header">
+                <div class="step-number">5</div>
+                <h3 data-i18n="clubs.step5.title">Настройки клуба</h3>
+              </div>
+              <p data-i18n="clubs.step5.desc">Логотип, цвета бренда, контакты, интеграция с Instagram, временные слоты</p>
+            </div>
+
+            <div class="crm-step">
+              <div class="crm-step-header">
+                <div class="step-number">6</div>
+                <h3 data-i18n="clubs.step6.title">Абонементы</h3>
+              </div>
+              <p data-i18n="clubs.step6.desc">Создайте членские пакеты: Standard, Gold, Unlimited — со скидками и привилегиями</p>
+            </div>
+
+            <div class="crm-step">
+              <div class="crm-step-header">
+                <div class="step-number">7</div>
+                <h3 data-i18n="clubs.step7.title">Часы доступности</h3>
+              </div>
+              <p data-i18n="clubs.step7.desc">Задайте рабочие часы для каждого корта, создайте исключения для выходных или техобслуживания</p>
+            </div>
+
+            <div class="crm-step">
+              <div class="crm-step-header">
+                <div class="step-number">8</div>
+                <h3 data-i18n="clubs.step8.title">Правила ценообразования</h3>
+              </div>
+              <p data-i18n="clubs.step8.desc">Гибкие тарифы по времени, дням недели, длительности. Пиковые и непиковые цены</p>
+            </div>
+
+            <div class="crm-step">
+              <div class="crm-step-header">
+                <div class="step-number">9</div>
+                <h3 data-i18n="clubs.step9.title">Окно бронирования</h3>
+              </div>
+              <p data-i18
