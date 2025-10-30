@@ -486,6 +486,87 @@
         justify-content: center;
       }
     }
+    .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  /* Cookie Banner */
+  .cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--card);
+    border-top: 2px solid var(--accent);
+    padding: 20px;
+    z-index: 1000;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+    display: none;
+    animation: slideUp 0.4s ease-out;
+  }
+
+  .cookie-banner.show {
+    display: block;
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+
+  .cookie-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .cookie-text {
+    flex: 1;
+    min-width: 280px;
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .cookie-text a {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  .cookie-buttons {
+    display: flex;
+    gap: 12px;
+  }
+
+  .cookie-btn {
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+    font-family: inherit;
+  }
+
+  .cookie-accept {
+    background: var(--accent-gradient);
+    color: #0a0e1a;
+  }
+
+  .cookie-accept:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 217, 255, 0.3);
+  }
+</style>
+</head>
+<body>
   </style>
 </head>
 <body>
@@ -879,6 +960,26 @@
       </div>
     </div>
   </footer>
+  </div>
+  </footer>
+
+  <!-- Cookie Consent Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-content">
+      <div class="cookie-text">
+        <span data-i18n="cookie.text">
+          Мы используем файлы cookie для улучшения работы сайта. Продолжая использовать сайт, вы соглашаетесь с 
+          <a href="Политика конфиденциальности.pdf" target="_blank">политикой конфиденциальности</a>.
+        </span>
+      </div>
+      <div class="cookie-buttons">
+        <button class="cookie-btn cookie-accept" id="acceptCookies" data-i18n="cookie.accept">Принять</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -994,6 +1095,8 @@
           'footer.contact.support': 'Поддержка',
           'footer.contact.faq': 'FAQ',
           'footer.rights': 'Все права защищены.'
+          'cookie.text': 'Мы используем файлы cookie для улучшения работы сайта. Продолжая использовать сайт, вы соглашаетесь с',
+        'cookie.accept': 'Принять'
         },
         en: {
           brand: 'Padel Finder Russia',
@@ -1106,6 +1209,8 @@
           'footer.contact.support': 'Support',
           'footer.contact.faq': 'FAQ',
           'footer.rights': 'All rights reserved.'
+    'cookie.text': 'We use cookies to improve your experience. By continuing to use the site, you agree to our',
+        'cookie.accept': 'Accept'
         }
       };
 
@@ -1158,6 +1263,23 @@
 
       document.getElementById('year').textContent = new Date().getFullYear();
       setLanguage('ru');
+    // Cookie consent
+      function checkCookieConsent() {
+        const consent = localStorage.getItem('cookieConsent');
+        if (!consent) {
+          setTimeout(function() {
+            document.getElementById('cookieBanner').classList.add('show');
+          }, 1000);
+        }
+      }
+
+      document.getElementById('acceptCookies').addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'accepted');
+        document.getElementById('cookieBanner').classList.remove('show');
+      });
+
+      checkCookieConsent();
+    });
     });
   </script>
 </body>
