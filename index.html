@@ -567,14 +567,13 @@
     }
     
     .cookie-banner.show {
-      bottom: 0;
-    }
-    
-    .cookie-banner.hide {
-  bottom: -160px;  /* a bit more than height */
+      .cookie-banner.hide {
+  bottom: -140px;     /* push it out fully */
   opacity: 0;
   pointer-events: none;
-  transform: translateY(20px);
+}
+      bottom: 0;
+    }
     .cookie-content {
       display: flex;
       align-items: center;
@@ -1082,10 +1081,11 @@
     }
     /* Sticky Header */
 header {
-  position: relative;   /* or just remove position altogether */
+  position: sticky;
+  top: 0;
   z-index: 1200;
-  background: rgba(10, 10, 26, 0.35);
   backdrop-filter: blur(16px);
+  background: rgba(10, 10, 26, 0.35);
 }
 
 /* Optional: prevent content from hiding under header */
