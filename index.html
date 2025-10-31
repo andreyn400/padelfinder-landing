@@ -567,13 +567,9 @@
     }
     
     .cookie-banner.show {
-      .cookie-banner.hide {
-  bottom: -140px;     /* push it out fully */
-  opacity: 0;
-  pointer-events: none;
-}
       bottom: 0;
     }
+    
     .cookie-content {
       display: flex;
       align-items: center;
@@ -1079,19 +1075,6 @@
 }
 
     }
-    /* Sticky Header */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1200;
-  backdrop-filter: blur(16px);
-  background: rgba(10, 10, 26, 0.35);
-}
-
-/* Optional: prevent content from hiding under header */
-main {
-  padding-top: 70px;
-}
   </style>
 </head>
 <body>
