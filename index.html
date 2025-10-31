@@ -625,6 +625,43 @@
         flex-direction: column;
         text-align: center;
       }
+      /* ====== CLUB FORM STYLES ====== */
+.club-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 420px;
+  margin: 20px auto 0 auto;
+}
+
+.club-form input,
+.club-form textarea {
+  padding: 10px 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 14px;
+  background: #fff;
+  color: #000;
+}
+
+.club-form textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.club-form button {
+  align-self: center;
+  margin-top: 4px;
+}
+
+@media (max-width: 600px) {
+  .club-form {
+    width: 100%;
+    padding: 0 10px;
+  }
+}
+
     }
   </style>
 </head>
