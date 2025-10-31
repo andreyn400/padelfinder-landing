@@ -2232,24 +2232,5 @@ main {
       }
     });
   </script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const banner = document.querySelector(".cookie-banner");
-    const btn = document.querySelector(".cookie-btn");
-
-    if (!banner) return;
-
-    if (localStorage.getItem("pf_cookies_accepted") !== "1") {
-      banner.classList.add("show");
-    }
-
-    if (btn) {
-      btn.addEventListener("click", function () {
-        localStorage.setItem("pf_cookies_accepted", "1");
-        banner.classList.remove("show");
-        banner.classList.add("hide");
-      });
-    }
-  });
-</script>
 </body>
 </html>
