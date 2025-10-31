@@ -1081,11 +1081,10 @@
     }
     /* Sticky Header */
 header {
-  position: sticky;
-  top: 0;
+  position: relative;   /* or just remove position altogether */
   z-index: 1200;
-  backdrop-filter: blur(16px);
   background: rgba(10, 10, 26, 0.35);
+  backdrop-filter: blur(16px);
 }
 
 /* Optional: prevent content from hiding under header */
