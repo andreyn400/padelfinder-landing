@@ -964,13 +964,32 @@
         </div>
         
         <div class="cta-section">
-          <h2 data-i18n="clubs.cta.title">Подключите ваш клуб</h2>
-          <p data-i18n="clubs.cta.subtitle">Старт за 24 часа после верификации документов</p>
-          <div class="cta-buttons">
-            <a href="mailto:info@padelfinder.ru?subject=Заявка на подключение клуба&body=Здравствуйте,%0A%0AЯ хочу подключить свой падел-клуб к системе Padel Finder Russia.%0A%0AНазвание клуба:%0AКоличество кортов:%0AГород:%0AКонтактный телефон:%0A%0AС уважением," class="btn btn-primary" data-i18n="clubs.cta.button">Отправить заявку</a>
-            <a href="mailto:info@padelfinder.ru" class="btn btn-secondary" data-i18n="clubs.cta.email">Написать на почту</a>
-          </div>
-        </div>
+  <h2 data-i18n="clubs.cta.title">Подключите ваш клуб</h2>
+  <p data-i18n="clubs.cta.subtitle">Старт за 24 часа после верификации документов</p>
+
+  <!-- ✅ Start of Formspree Form -->
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="club-form">
+    <input type="text" name="Название клуба" placeholder="Название клуба" required>
+    <input type="text" name="Город" placeholder="Город" required>
+    <input type="number" name="Количество кортов" placeholder="Количество кортов" required>
+    <input type="tel" name="Контактный телефон" placeholder="Контактный телефон" required>
+    <input type="email" name="Email" placeholder="Email" required>
+    <textarea name="Комментарий" placeholder="Комментарий"></textarea>
+
+    <!-- Optional redirect after submission -->
+    <input type="hidden" name="_redirect" value="https://padelfinder.ru/thankyou.html">
+
+    <button type="submit" class="btn btn-primary" data-i18n="clubs.cta.button">Отправить заявку</button>
+  </form>
+  <!-- ✅ End of Formspree Form -->
+
+  <p style="margin-top: 15px;">
+    Или напишите напрямую: 
+    <a href="mailto:info@padelfinder.ru" class="btn btn-secondary" data-i18n="clubs.cta.email">
+      info@padelfinder.ru
+    </a>
+  </p>
+</div>
       </div>
     </div>
   </main>
