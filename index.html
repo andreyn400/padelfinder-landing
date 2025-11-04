@@ -559,7 +559,7 @@
     /* Cookie Banner Styles */
     .cookie-banner {
       position: fixed;
-      bottom: -100px;
+      bottom: -300px;
       left: 0;
       right: 0;
       background: var(--card);
@@ -569,7 +569,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      transition: bottom 0.3s ease;
+      transition: bottom 0.6s ease;
       z-index: 1000;
       box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
     }
@@ -1942,9 +1942,13 @@
       }
 
       document.getElementById('acceptCookies').addEventListener('click', function() {
-        localStorage.setItem('cookieConsent', 'accepted');
-        document.getElementById('cookieBanner').classList.remove('show');
-      });
+  localStorage.setItem('cookieConsent', 'accepted');
+  const banner = document.getElementById('cookieBanner');
+  banner.classList.remove('show');
+  setTimeout(function() {
+    banner.style.display = 'none';
+  }, 600);
+});
 
       checkCookieConsent();
       
