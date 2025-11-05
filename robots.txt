@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Sitemap: https://padelfinder.ru/sitemap.xml
+
+User-agent: Yandex
+Allow: /
+Sitemap: https://padelfinder.ru/sitemap.xml
